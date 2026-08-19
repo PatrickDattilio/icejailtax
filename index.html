@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICE Jail Tax | See How Much the Proposed Facility Could Cost Your Home Value</title>
+  <meta name="description" content="Calculate how much property value your home could lose if the proposed ICE detention facility opens in Williamsport / Washington County, Maryland. Based on peer-reviewed MIT Press research.">
+  <link rel="canonical" href="https://www.icejailtax.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.icejailtax.com/">
+  <meta property="og:title" content="ICE Jail Tax | Washington County Homeowner Value Loss Calculator">
+  <meta property="og:description" content="Enter your address to see your distance from the proposed ICE detention facility and calculate your estimated home value loss based on peer-reviewed economic research.">
+  <meta property="og:image" content="https://www.icejailtax.com/assets/favicon.svg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ICE Jail Tax | See How Much the Proposed Facility Could Cost You">
+  <meta name="twitter:description" content="Calculate how much value your home could lose if the proposed ICE facility opens in Washington County, MD.">
+  
+  <meta name="theme-color" content="#121826">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <!-- Site Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ICE Jail Tax Calculator",
+    "url": "https://www.icejailtax.com/",
+    "applicationCategory": "RealEstateApplication",
+    "description": "Calculates estimated property value loss for homeowners near the proposed Washington County ICE detention center based on peer-reviewed MIT Press research.",
+    "operatingSystem": "All"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="https://www.icejailtax.com/" class="brand-link" aria-label="ICE Jail Tax Home">
+        <img src="assets/logo.svg" alt="ICE Jail Tax Logo" class="brand-logo" width="230" height="46">
+      </a>
+
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#interactive-map">Map</a></li>
+          <li><a href="#community-impact">Community Risk</a></li>
+          <li><a href="#the-study">The Research</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#action-section" class="nav-cta">Take Action</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">WASHINGTON COUNTY PROPERTY VALUE RISK ASSESSMENT</span>
+          <h1>See How Much the Proposed ICE Jail Could Cost You</h1>
+          <p class="lead-text">
+            In January 2026, the Department of Homeland Security purchased an 825,000 sq. ft. facility in Williamsport to convert into an ICE detention facility. A landmark peer-reviewed MIT Press study found that new correctional facilities significantly decrease nearby residential home values.
+          </p>
+          <div class="hero-actions">
+            <a href="#calculator" class="btn btn--primary">
+              <span>Check Your Address</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </a>
+          </div>
+
+          <div class="hero-stats-banner">
+            <div class="hero-stat">
+              <span class="hero-stat-value">$22.3M</span>
+              <span class="hero-stat-label">Estimated Washington County Homeowner Value Loss</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">−3.4%</span>
+              <span class="hero-stat-label">Average Decline Within 1.24 Miles (p &lt; 0.01)</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value">100%</span>
+              <span class="hero-stat-label">Of Williamsport Residences in High-Impact Radius</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <span class="eyebrow">FACILITY DETAILS</span>
+          <h3>10900 Hopewell Road</h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">
+            Also known as 16220 Wright Road, Williamsport, MD 21795. Purchased by DHS for conversion into an ICE detention facility.
+          </p>
+          <ul style="font-size:0.9rem; color:var(--text-muted); line-height:1.7; padding-left:1.2rem; margin-bottom:1.25rem;">
+            <li><strong>Scale:</strong> 825,000 sq ft industrial warehouse complex</li>
+            <li><strong>Impact Scope:</strong> Williamsport, Halfway, Hagerstown, Kemps Mill, Pinesburg, and Wilson-Conococheague</li>
+            <li><strong>Public Review:</strong> Zero official local economic impact study conducted by DHS</li>
+          </ul>
+          <a href="#interactive-map" class="btn btn--secondary" style="width:100%;">
+            <span>Explore 2.49-Mile Impact Radius Map</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Calculator Section -->
+  <section class="calculator-section" id="calculator">
+    <div class="container container--narrow">
+      <div class="calculator-wrapper">
+        <div class="calc-header">
+          <span class="eyebrow">INTERACTIVE ADDRESS CHECKER</span>
+          <h2>How close is your home?</h2>
+          <p style="color:var(--text-muted); font-size:1.05rem;">
+            Enter your Washington County property address to calculate your straight-line distance to the facility, verify your official Maryland SDAT appraisal, and calculate your estimated property value loss based on peer-reviewed economic research.
+          </p>
+        </div>
+
+        <form class="address-form" id="address-form">
+          <label for="address-input" class="form-label">Enter Home or Property Address</label>
+          <div class="input-group">
+            <input
+              type="search"
+              id="address-input"
+              class="address-input"
+              placeholder="e.g. 16715 Buford Dr, Williamsport, MD 21795"
+              required
+              autocomplete="street-address"
+            >
+            <button type="submit" class="btn btn--primary" id="submit-btn">
+              <span>Calculate My Impact</span>
+              <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </div>
+
+          <div class="example-chips">
+            <span>Try sample addresses:</span>
+            <button type="button" class="example-chip-btn" data-example-address="16715 Buford Dr, Williamsport, MD 21795">16715 Buford Dr, Williamsport</button>
+            <button type="button" class="example-chip-btn" data-example-address="16912 Virginia Ave, Williamsport, MD 21795">16912 Virginia Ave, Williamsport</button>
+            <button type="button" class="example-chip-btn" data-example-address="100 N Potomac St, Hagerstown, MD 21740">100 N Potomac St, Hagerstown</button>
+          </div>
+        </form>
+
+        <p class="calc-privacy-note">
+          🔒 <strong>Privacy Assured:</strong> Your address is checked directly against U.S. Census geocoding and public Maryland iMAP / SDAT property databases. We do not store, log, or track your address or calculation results.
+        </p>
+
+        <!-- Dynamic Results Card Container -->
+        <div class="results-container" id="results-section" hidden>
+          <div id="result-card"></div>
+        </div>
+
+        <!-- Manual Custom Home Value Calculator -->
+        <div class="manual-calc-box">
+          <span class="eyebrow">CUSTOM VALUATION ESTIMATOR</span>
+          <h3>Estimate Loss for Any Custom Valuation</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem;">
+            Want to test what a 3.4%, 2.0%, or 1.8% decline looks like on your estimated market value or purchase price? Enter any amount below:
+          </p>
+
+          <div class="manual-calc-grid">
+            <div class="manual-inputs">
+              <div class="manual-field">
+                <label for="manual-home-value">Property Value ($ USD)</label>
+                <input type="number" id="manual-home-value" class="number-input" value="350000" step="5000" min="0">
+              </div>
+              <div class="manual-field">
+                <label for="manual-radius-select">Distance / Study Tier</label>
+                <select id="manual-radius-select" class="select-input">
+                  <option value="0.034" selected>&le; 1.24 Miles (−3.4% High-Impact Zone, p &lt; 0.01)</option>
+                  <option value="0.020">&le; 1.86 Miles (−2.0% Intermediate Zone, p &lt; 0.10)</option>
+                  <option value="0.018">&le; 2.49 Miles (−1.8% Outer Boundary, p &lt; 0.10)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="manual-outputs">
+              <div class="manual-stat">
+                <span class="manual-stat-label">Estimated Loss (<span id="manual-rate-label">3.4%</span>):</span>
+                <span class="manual-stat-value manual-stat-value--red" id="manual-loss-result">−$11,900</span>
+              </div>
+              <div class="manual-stat">
+                <span class="manual-stat-label">Estimated Diminished Value:</span>
+                <span class="manual-stat-value" id="manual-after-result">$338,100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="map-section" id="interactive-map">
+    <div class="container">
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 2rem;">
+        <span class="eyebrow">GEOGRAPHIC RISK MAP</span>
+        <h2>Williamsport & Surrounding Impact Radii</h2>
+        <p style="color:var(--text-muted); font-size:1.05rem;">
+          The map below displays the proposed ICE facility in Williamsport and concentric circles illustrating the distance tiers analyzed in the MIT Press study.
+        </p>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="interactive-map"></div>
+        <div class="map-legend">
+          <span style="font-weight:900; text-transform:uppercase; font-size:0.78rem; letter-spacing:0.05em; color:var(--dark);">Legend:</span>
+          <div class="legend-item">
+            <span class="legend-dot legend-dot--facility"></span>
+            <span>Proposed Facility (10900 Hopewell Rd)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-dot--red"></span>
+            <span>&le; 1.24 mi (−3.4% Decline, p &lt; 0.01)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-dot--orange"></span>
+            <span>&le; 1.86 mi (−2.0% Decline)</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-dot legend-dot--amber"></span>
+            <span>&le; 2.49 mi (−1.8% Decline)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Impact Section -->
+  <section class="impact-section" id="community-impact">
+    <div class="container">
+      <div style="max-width: 760px;">
+        <span class="eyebrow">COUNTYWIDE ECONOMIC ANALYSIS</span>
+        <h2>$22.3 Million in Potential Property Value Losses</h2>
+        <p class="lead-text">
+          Applying the empirical findings of the MIT Press study to residential parcels in Washington County reveals that nearby homeowners bear an estimated $22.3 million in collective property value devaluation.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th>Community / Area</th>
+              <th>Distance to Facility</th>
+              <th>Applicable Study Tier</th>
+              <th class="text-right">Estimated Collective Loss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Town of Williamsport</strong> (All Residences)</td>
+              <td>0.00 – 2.49 Miles</td>
+              <td>1.8% to 3.4% Decline</td>
+              <td class="text-right" style="color:var(--primary-red); font-weight:800;">−$8.4 Million</td>
+            </tr>
+            <tr>
+              <td><strong>Halfway / Kemps Mill</strong></td>
+              <td>0.50 – 2.00 Miles</td>
+              <td>2.0% to 3.4% Decline</td>
+              <td class="text-right" style="color:var(--primary-red); font-weight:800;">−$6.1 Million</td>
+            </tr>
+            <tr>
+              <td><strong>South & West Hagerstown</strong></td>
+              <td>1.50 – 2.49 Miles</td>
+              <td>1.8% to 2.0% Decline</td>
+              <td class="text-right" style="color:var(--primary-red); font-weight:800;">−$4.9 Million</td>
+            </tr>
+            <tr>
+              <td><strong>Pinesburg & Wilson-Conococheague</strong></td>
+              <td>1.80 – 2.49 Miles</td>
+              <td>1.8% Decline</td>
+              <td class="text-right" style="color:var(--primary-red); font-weight:800;">−$2.9 Million</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"><strong>Total Estimated Washington County Residential Wealth Loss</strong></td>
+              <td class="text-right" style="color:var(--primary-red); font-size:1.15rem; font-weight:900;">−$22,300,000</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Study Section -->
+  <section class="study-section" id="the-study">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <span class="eyebrow">PEER-REVIEWED RESEARCH</span>
+        <h2>The Economic Science Behind the Calculator</h2>
+        <p class="lead-text">
+          In November 2024, MIT Press published a comprehensive national econometric analysis titled <em>“The Local Impacts of Prisons”</em> in <em>The Review of Economics and Statistics</em>.
+        </p>
+      </div>
+
+      <div class="study-cards-grid">
+        <div class="card">
+          <h4>Empirical Methodology</h4>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            Researchers analyzed decades of national housing transactions surrounding newly opened correctional facilities, controlling for county-level economic trends, interest rates, and demographic shifts.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Distance-Decay Gradient</h4>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            The negative impact is greatest closest to the facility: home values fell by <strong>3.4% within 1.24 miles</strong> with high statistical certainty (p &lt; 0.01), and <strong>1.8% within 2.49 miles</strong>.
+          </p>
+        </div>
+        <div class="card">
+          <h4>Unanalyzed Public Burden</h4>
+          <p style="font-size:0.95rem; color:var(--text-muted);">
+            DHS has provided no public economic impact assessment or compensation mechanism for the multi-million dollar asset devaluation imposed on Washington County property owners.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:2rem; text-align:center;">
+        <a href="https://direct.mit.edu/rest/article/106/6/1442/113773/The-Local-Economic-Impacts-of-Prisons" target="_blank" rel="noopener noreferrer" class="link-external" style="font-weight:800; font-size:1.05rem;">
+          Read the full study in <em>The Review of Economics and Statistics</em> (MIT Press) &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Action Section & Public Comment Generator -->
+  <section class="action-section" id="action-section">
+    <div class="container container--narrow">
+      <div class="action-box">
+        <span class="eyebrow">TAKE ACTION</span>
+        <h2>Submit Your Official Public Comment</h2>
+        <p style="color:var(--text-muted); font-size:1.05rem;">
+          Use the figures generated for your home to submit an official comment to DHS and local officials. Personalize and copy the pre-written testimony below:
+        </p>
+
+        <textarea id="public-comment-text" class="comment-textarea" spellcheck="false"></textarea>
+
+        <div class="action-buttons-row">
+          <button type="button" class="btn btn--primary" id="copy-comment-btn">
+            <svg viewBox="0 0 20 20" width="18" height="18" fill="currentColor"><path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"/><path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z"/></svg>
+            <span>Copy Comment to Clipboard</span>
+          </button>
+          <a href="https://NoKingsNoCamps.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+            <span>Submit Comment at NoKingsNoCamps.com &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Social Share Bar -->
+        <div class="share-bar">
+          <span style="font-size:0.9rem; font-weight:800; color:var(--dark);">Share this tool with your neighbors:</span>
+          <div class="share-links">
+            <a href="#" id="share-twitter" target="_blank" rel="noopener noreferrer" class="share-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span>X (Twitter)</span>
+            </a>
+            <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer" class="share-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook</span>
+            </a>
+            <a href="#" id="share-bluesky" target="_blank" rel="noopener noreferrer" class="share-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.247-4.046-6.436-6.798-8.501C2.455.234 0 2.213 0 5.883c0 .732.42 6.156.667 7.037.856 3.061 3.978 3.842 6.755 3.37-4.854.826-6.089 3.562-3.422 6.299 5.065 5.196 7.28-1.304 7.847-2.97.568 1.666 2.782 8.166 7.847 2.97 2.667-2.737 1.432-5.473-3.422-6.3 2.777.473 5.899-.308 6.755-3.369.247-.881.667-6.305.667-7.037 0-3.67-2.455-5.649-5.202-3.584C16.046 4.364 13.087 8.553 12 10.8z"/></svg>
+              <span>Bluesky</span>
+            </a>
+            <a href="#" id="share-email" class="share-btn">
+              <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container container--narrow">
+      <div style="text-align:center; margin-bottom:2rem;">
+        <span class="eyebrow">COMMON QUESTIONS</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>How does this calculator determine my home's valuation?</summary>
+          <div class="faq-answer">
+            <p>
+              When you submit your street address, the tool locates the exact property parcel through the Maryland Department of Planning's official iMAP / SDAT (State Department of Assessments and Taxation) records. It retrieves the official full appraised property value on record for tax year 2026 and applies the distance-based loss percentage identified in the MIT Press research study.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Where do the percentage loss figures (3.4%, 2.0%, 1.8%) come from?</summary>
+          <div class="faq-answer">
+            <p>
+              These figures come directly from <em>"The Local Impacts of Prisons"</em>, a peer-reviewed empirical study published in November 2024 in <em>The Review of Economics and Statistics</em> (MIT Press). The researchers analyzed home transactions across the United States before and after new correctional facilities opened, identifying a statistically significant drop of 3.4% within 1.24 miles and 1.8% within 2.49 miles.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is my address data saved or tracked?</summary>
+          <div class="faq-answer">
+            <p>
+              No. Your address is sent securely in real-time only to match U.S. Census coordinates and Maryland public GIS property records. Neither this website nor any third party stores your address, search history, or property calculation.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if my home is outside the 2.49-mile boundary?</summary>
+          <div class="faq-answer">
+            <p>
+              The study found that beyond 2.49 miles, price declines were not statistically significant at standard scientific thresholds (e.g. at 3.11 miles). The calculator therefore reports zero assigned reduction for addresses beyond 2.49 miles to maintain scientific integrity. However, broader regional economic and traffic impacts may still affect the wider area.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="ICE Jail Tax" style="filter: brightness(0) invert(1); height:38px; margin-bottom:1rem;" width="200" height="40">
+          <p>
+            An independent, community-driven civic resource empowering Washington County, Maryland homeowners and taxpayers with empirical economic data.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#calculator">Property Calculator</a></li>
+            <li><a href="#interactive-map">Impact Zone Map</a></li>
+            <li><a href="#community-impact">Community Breakdown</a></li>
+            <li><a href="#the-study">The Research</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Public Data Sources</h4>
+          <ul>
+            <li><a href="https://direct.mit.edu/rest/article/106/6/1442/113773/The-Local-Economic-Impacts-of-Prisons" target="_blank" rel="noopener noreferrer">MIT Press Study</a></li>
+            <li><a href="https://mdgeodata.md.gov/imap/rest/services/PlanningCadastre/MD_PropertyData/MapServer/0" target="_blank" rel="noopener noreferrer">Maryland iMAP SDAT Data</a></li>
+            <li><a href="https://geocoding.geo.census.gov/" target="_blank" rel="noopener noreferrer">U.S. Census Bureau</a></li>
+            <li><a href="https://NoKingsNoCamps.com/" target="_blank" rel="noopener noreferrer">NoKingsNoCamps.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ICE Jail Tax (icejailtax.com). Educational & Civic Transparency Resource.</p>
+        <p>Calculations provided for public informational and civic advocacy purposes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Application Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/share.js"></script>
+  <script src="js/calculator.js"></script>
+
+  <!-- Mobile Nav Toggle Handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('menu-toggle');
+      const links = document.getElementById('nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const isOpen = links.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+        links.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            links.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
