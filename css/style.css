@@ -116,6 +116,72 @@ h4 { font-size: 1.15rem; }
   margin-bottom: 1.5rem;
 }
 
+/* Top HRR Branding Bar */
+.site-top-bar {
+  background: var(--dark);
+  color: #f1f5f9;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #2d3748;
+  padding: 0.45rem 0;
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.top-bar-badge {
+  background: var(--primary-red);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.top-bar-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.top-bar-link:hover {
+  text-decoration: underline;
+  color: #fecaca;
+}
+
+.top-bar-sep {
+  color: #64748b;
+}
+
+.top-bar-tagline {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.top-bar-donate-btn {
+  color: #fca5a5;
+  font-weight: 750;
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: color 0.15s ease;
+}
+
+.top-bar-donate-btn:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 /* Header & Navbar */
 .site-header {
   background: #ffffff;
@@ -318,6 +384,38 @@ h4 { font-size: 1.15rem; }
   box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.2);
 }
 
+/* Hero HRR Badge */
+.hrr-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1.5px solid var(--dark);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  box-shadow: 2px 2px 0 var(--dark);
+}
+
+.hrr-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-red);
+  border-radius: 50%;
+}
+
+.hrr-hero-badge a {
+  color: var(--primary-red);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.hrr-hero-badge a:hover {
+  text-decoration: underline;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -333,6 +431,12 @@ h4 { font-size: 1.15rem; }
   transition: all 0.15s ease;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.btn--sm {
+  min-height: 42px;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.88rem;
 }
 
 .btn--primary {
@@ -1021,6 +1125,89 @@ h4 { font-size: 1.15rem; }
 
 .footer-col a:hover {
   color: #ffffff;
+}
+
+.footer-hrr-banner {
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.footer-hrr-info {
+  flex: 1 1 500px;
+}
+
+.footer-hrr-eyebrow {
+  display: inline-block;
+  color: #f87171;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.footer-hrr-info h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-hrr-info p {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.footer-hrr-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.footer-social-section {
+  margin-top: 1.25rem;
+}
+
+.footer-social-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 750;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.footer-social-icons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.footer-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #334155;
+  color: #f1f5f9;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.footer-social-icon:hover {
+  background: var(--primary-red);
+  color: #ffffff;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .footer-bottom {
